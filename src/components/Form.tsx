@@ -17,7 +17,6 @@ export default function Form() {
             ...activity,
             [e.target.id]: isNumberField? +e.target.value: e.target.value
         })
-        console.log(e.target.id)
     }
 
     const isValidActivity = () => {
@@ -72,7 +71,7 @@ export default function Form() {
             </div>
             <input
              type="submit" 
-             value="Guardar Comida o Guardar ejercicio" 
+             value={activity.category === 1 ? 'Guardar Comida': 'Guardar Ejercicio'} 
              className="bg-gray-800 hover:bg-gray-900 w-full p-2 font-bold uppercase text-white cursor-pointer disabled:opacity-10"
              disabled={!isValidActivity()}
              />
