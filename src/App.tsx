@@ -1,12 +1,11 @@
-import { useEffect, useMemo, useReducer } from "react"
+import { useEffect, useMemo } from "react"
 import Form from "./components/Form"
-import { activityReducer, initialState } from "./reducers/activity-reducer"
 import ActivityList from "./components/ActivityList"
 import CaloryTracker from "./components/CaloryTracker"
+import { useActivity } from "./hooks/useActivity"
 
 function App() {
-  const [state, dispatch] = useReducer(activityReducer, initialState)
-
+  const {state, dispatch} = useActivity()
   useEffect(()=>{
     localStorage.setItem('activities', JSON.stringify(state.activities))
   }, [state.activities])

@@ -1,5 +1,5 @@
 import { createContext, Dispatch, ReactNode, useReducer } from "react";
-import { ActivityActions, activityReducer, ActivityState, initialState } from "../../reducers/activity-reducer";
+import { ActivityActions, activityReducer, ActivityState, initialState } from "../reducers/activity-reducer";
 
 type ActivityProviderProps = {
     children: ReactNode
